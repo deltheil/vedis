@@ -105,8 +105,8 @@
 
 # connection
 
-[-] echo
-[ ] ping
+[x] echo
+[x] ping
 
 # server
 

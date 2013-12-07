@@ -20307,6 +20307,16 @@ static int vedis_cmd_echo(vedis_context *pCtx, int nArg, vedis_value **apArg)
 	return VEDIS_OK;
 }
 /*
+ *  Command: PING
+ * Return:
+ *   bool: TRUE on success, FALSE otherwise.
+ */
+static int vedis_cmd_ping(vedis_context *pCtx, int nArg, vedis_value **apArg)
+{
+	vedis_result_bool(pCtx,1);
+	return VEDIS_OK;
+}
+/*
  *  Command: ABORT
  *   Throw an error message and abort execution.
  * Return:
@@ -20481,6 +20491,7 @@ VEDIS_PRIVATE int vedisRegisterBuiltinCommands(vedis *pVedis)
 		{ "DATE",       vedis_cmd_date       },
 		{ "OS",         vedis_cmd_os         },
 		{ "ECHO",       vedis_cmd_echo       },
+		{ "PING",       vedis_cmd_ping       },
 		{ "PRINT",      vedis_cmd_echo       },
 		{ "ABORT",      vedis_cmd_abort      },
 		{ "CMD_LIST",   vedis_cmd_c_list     },

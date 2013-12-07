@@ -6,7 +6,7 @@
 #include "utils.h"
 
 void
-ctteststrings(void)
+cttestserver(void)
 {
   int rc;
   const char *str;
@@ -16,17 +16,14 @@ ctteststrings(void)
   rc = vedis_open(&store, NULL /* in memory */);
   assert(rc == VEDIS_OK);
 
-  EXEC_CMD("GET misc");
-  assert(vedis_value_is_null(res));
-
-  EXEC_CMD("SET misc smthg");
-  assert(vedis_value_is_bool(res));
-  assert(vedis_value_to_bool(res));
-
-  EXEC_CMD("GET misc");
+  EXEC_CMD("ECHO hello");
   assert(vedis_value_is_string(res));
   assert(str = vedis_value_to_string(res, NULL));
-  assert(!strcmp(str, "smthg"));
+  assert(!strcmp(str, "hello"));
+
+  EXEC_CMD("PING");
+  assert(vedis_value_is_bool(res));
+  assert(vedis_value_to_bool(res));
 
   vedis_close(store);
 }
