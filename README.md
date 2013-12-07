@@ -36,6 +36,26 @@ Secondary goals are to provide:
 for mobile platforms (iOS, Android),
 * some basic unit tests to cover the new commands additions.
 
+## How-To
+
+```bash
+# Build the static library
+$ make
+
+# Run the hello world
+$ make demo
+
+# Run the tests
+$ make check
+
+# Build a fat static library for iOS w/ 64-bit support
+$ make -f Makefile.ios
+# -> build-ios-fat/libvedis.a
+
+# Clean up
+$ make clean
+```
+
 ## License
 
 Vedis is released under the Sleepycat License: see `LICENSE`.
