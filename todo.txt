@@ -1,0 +1,114 @@
+# keys
+
+[-] del
+[-] exists
+[ ] keys
+[ ] randomkey
+[ ] rename
+[ ] renamenx
+[ ] type
+
+# strings
+
+[-] append
+[ ] bitcount
+[ ] bitop
+[-] decr
+[-] decrby
+[-] get
+[ ] getbit
+[ ] getrange
+[ ] getset
+[-] incr
+[-] incrby
+[ ] incrbyfloat
+[-] mget
+[-] mset
+[-] msetnx
+[-] set
+[ ] setbit
+[-] setnx
+[ ] setrange
+[ ] strlen
+
+# hashes
+
+[-] hdel
+[-] hexists
+[-] hget
+[-] hgetall
+[ ] hincrby
+[ ] hincrbyfloat
+[-] hkeys
+[-] hlen
+[-] hmget
+[-] hmset
+[-] hset
+[-] hsetnx
+[-] hvals
+
+# lists
+
+[ ] blpop
+[ ] brpop
+[ ] brpoplpush
+[-] lindex
+[ ] linsert
+[-] llen
+[-] lpop
+[-] lpush
+[-] lpushx
+[ ] lrange
+[ ] lrem
+[ ] lset
+[ ] ltrim
+[ ] rpop
+[ ] rpoplpush
+[ ] rpush
+[ ] rpushx
+
+# sets
+
+[-] sadd
+[-] scard
+[-] sdiff
+[ ] sdiffstore
+[-] sinter
+[ ] sinterstore
+[ ] sismember
+[-] smembers
+[ ] smove
+[-] spop
+[ ] srandmember
+[-] srem
+[ ] sunion
+[ ] sunionstore
+
+# sorted sets
+
+[ ] zadd
+[ ] zcard
+[ ] zcount
+[ ] zincrby
+[ ] zinterstore
+[ ] zrange
+[ ] zrangebyscore
+[ ] zrank
+[ ] zrem
+[ ] zremrangebyrank
+[ ] zremrangebyscore
+[ ] zrevrange
+[ ] zrevrangebyscore
+[ ] zrevrank
+[ ] zscore
+[ ] zunionstore
+
+# connection
+
+[-] echo
+[ ] ping
+
+# server
+
+[ ] flushall
+[ ] flushdb
