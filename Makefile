@@ -1,18 +1,27 @@
-LIBNAME=libvedis.a
+LIB=vedis
+LIBNAME=lib$(LIB).a
 DIR=build
 
 all: lib
 
 lib: $(DIR)/$(LIBNAME)
 
-$(DIR)/vedis.o: vedis.c vedis.h
+$(DIR)/%.o: %.c vedis.h
 	install -d $(DIR)
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c -I. $(CFLAGS) $< -o $@
 
 $(DIR)/$(LIBNAME): $(DIR)/vedis.o
 	install -d $(DIR)
 	rm -f $@
 	$(AR) cq $@ $(DIR)/vedis.o
+
+demo: $(DIR)/hello
+	@./$(DIR)/hello
+
+$(DIR)/hello: $(DIR)/hello.o
+	$(CC) -L$(DIR) -l$(LIB) $< -o $@
+
+$(DIR)/hello.o: hello.c $(DIR)/$(LIBNAME)
 
 clean:
 	rm -rf $(DIR)
