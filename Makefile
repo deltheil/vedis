@@ -23,6 +23,10 @@ $(DIR)/hello: $(DIR)/hello.o
 
 $(DIR)/hello.o: hello.c $(DIR)/$(LIBNAME)
 
+check: lib
+	$(MAKE) -C tests clean
+	$(MAKE) -C tests check
+
 clean:
 	rm -rf $(DIR)
 
